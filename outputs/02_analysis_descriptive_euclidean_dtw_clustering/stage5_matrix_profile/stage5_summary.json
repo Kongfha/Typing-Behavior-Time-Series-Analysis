@@ -1,0 +1,17 @@
+{
+  "n_participants": 26,
+  "long_prompts": [
+    "P12",
+    "P13",
+    "P14"
+  ],
+  "friction_window": 16,
+  "suffix_window": 12,
+  "aggregated_curve_window": 8,
+  "friction_mp_rows": 468,
+  "error_suffix_mp_rows": 462,
+  "aggregated_curve_mp_rows": 18,
+  "nickname_map_csv": "outputs/02_analysis_descriptive_euclidean_dtw_clustering/stage5_matrix_profile/tables/participant_nickname_to_anon_id_map.csv",
+  "figures_dir": "outputs/02_analysis_descriptive_euclidean_dtw_clustering/stage5_matrix_profile/figures",
+  "tables_dir": "outputs/02_analysis_descriptive_euclidean_dtw_clustering/stage5_matrix_profile/tables"
+}
