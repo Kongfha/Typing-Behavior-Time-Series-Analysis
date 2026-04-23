@@ -1,0 +1,23 @@
+{
+  "event_sequence_features_continuous": [
+    "log_dt_ms",
+    "prefix_gain",
+    "error_suffix_len_after",
+    "geo_burden_planned"
+  ],
+  "event_sequence_features_binary": [
+    "is_delete",
+    "layout_switch_needed"
+  ],
+  "prompt_position_features_continuous": [
+    "time_to_stability_ms",
+    "time_to_first_correct_ms",
+    "revisions"
+  ],
+  "prompt_position_features_binary": [
+    "wrong_first"
+  ],
+  "n_event_sequences": 364,
+  "n_prompt_position_sequences": 364,
+  "n_error_episode_windows": 1787
+}

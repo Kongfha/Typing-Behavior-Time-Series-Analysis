@@ -1,0 +1,4 @@
+﻿cluster_id,n_trials,mean_duration_ms,mean_friction,mean_wrong_suffix_depth,mean_near_key_typo_count,mean_layout_confusion_count,mean_shift_confusion_count,dominant_participants
+1,4,81400.25,0.0127224602093934,4.5,19.75,0.0,0.75,"M (1), Naenon (1), Shimmy (1)"
+2,17,70115.4705882353,0.04890360034809622,3.235294117647059,4.294117647058823,0.0,0.29411764705882354,"Bao (1), Plub (1), น้ำ (1)"
+3,5,36873.2,-0.18000026904006738,4.2,5.4,0.0,0.4,"Chokdee` (1), Tack (1), march (1)"

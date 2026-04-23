@@ -204,6 +204,23 @@ How it was derived:
    - `is_shift_confusion`
 10. compute geometry burden and scalar `friction`
 
+Canonical friction definition now used in this notebook:
+
+```text
+friction =
+    0.30 * z_log_dt_ms
+  + 0.25 * is_delete
+  + 0.30 * z_error_suffix_len_after
+  + 0.08 * z_geo_burden_planned
+  + 0.02 * layout_switch_needed
+```
+
+Important notes:
+
+- `geo_burden_error` is no longer included in canonical friction
+- the older friction behavior was too noisy because sparse error-side terms, especially `geo_burden_error`, created undesirable spikes
+- `friction_plot_smooth` is a visualization-only centered rolling mean of canonical `friction`, computed within trial with `window=5` and `min_periods=1`
+
 Major feature families inside this file:
 
 - raw event fields
@@ -239,6 +256,7 @@ Major feature families inside this file:
   - `geo_burden_error`
 - scalar summary field:
   - `friction`
+  - `friction_plot_smooth`
 - QC fields:
   - `qc_event_index_ok`
   - `qc_time_monotonic_ok`
@@ -284,7 +302,8 @@ Columns:
   - `error_suffix_len_after`
   - `geo_burden_planned`
   - `layout_switch_needed`
-  - `friction`
+- `friction`
+- `friction_plot_smooth`
 
 Use it for:
 
@@ -694,6 +713,10 @@ Required column:
 
 - `friction`
 
+Visualization-only companion column:
+
+- `friction_plot_smooth`
+
 How to build it:
 
 ```python
@@ -703,10 +726,20 @@ friction_waveforms = {
 }
 ```
 
+For plotting only:
+
+```python
+friction_waveforms_plot = {
+    trial_uid: grp.sort_values("event_index")["friction_plot_smooth"].to_numpy()
+    for trial_uid, grp in event_core.groupby("trial_uid", sort=False)
+}
+```
+
 Interpretation:
 
 - one 1D waveform per trial
-- useful for visualization, Euclidean baselines, DTW on scalar sequences, and later Matrix Profile work
+- use canonical `friction` for downstream analysis, Euclidean baselines, DTW, and Matrix Profile work
+- use `friction_plot_smooth` for event-trace plotting and visual waveform presentation
 
 ### 6.3 TS Object C: Prompt-Position Stability Sequence
 

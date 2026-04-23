@@ -1,0 +1,10 @@
+﻿table,rows,columns
+trial_qc,390,23
+session_qc,26,9
+trial_features,390,40
+prompt_position_features,23374,76
+prompt_position_sequence_ready,23374,12
+event_sequence_core,30930,16
+event_sequence_enriched,30930,189
+error_episode_summary,1889,18
+participant_keyboard_profile_exported,832,17

@@ -1,0 +1,46 @@
+                               OLS Regression Results                               
+====================================================================================
+Dep. Variable:     log_time_to_stability_ms   R-squared:                       0.266
+Model:                                  OLS   Adj. R-squared:                  0.266
+Method:                       Least Squares   F-statistic:                     386.7
+Date:                      Fri, 24 Apr 2026   Prob (F-statistic):               0.00
+Time:                              01:45:36   Log-Likelihood:                -27114.
+No. Observations:                     20384   AIC:                         5.427e+04
+Df Residuals:                         20361   BIC:                         5.446e+04
+Df Model:                                22                                         
+Covariance Type:                        HC3                                         
+==========================================================================================================
+                                             coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------------
+Intercept                                  8.5301      0.090     95.273      0.000       8.355       8.706
+C(char_class_j)[T.english_punctuation]    -0.3955      0.102     -3.870      0.000      -0.596      -0.195
+C(char_class_j)[T.thai_consonant]          0.0942      0.083      1.131      0.258      -0.069       0.257
+C(char_class_j)[T.thai_diacritic]          0.6958      0.104      6.661      0.000       0.491       0.900
+C(char_class_j)[T.thai_numeral]            1.5781      0.151     10.444      0.000       1.282       1.874
+C(char_class_j)[T.thai_tone_mark]          0.0823      0.088      0.937      0.349      -0.090       0.254
+C(char_class_j)[T.thai_vowel_mark]        -0.0077      0.084     -0.091      0.928      -0.173       0.158
+C(prompt_id)[T.P02]                        0.0363      0.051      0.716      0.474      -0.063       0.136
+C(prompt_id)[T.P03]                        0.1430      0.041      3.494      0.000       0.063       0.223
+C(prompt_id)[T.P04]                        0.1076      0.044      2.421      0.015       0.020       0.195
+C(prompt_id)[T.P05]                        0.0774      0.047      1.632      0.103      -0.016       0.170
+C(prompt_id)[T.P06]                        0.6876      0.042     16.304      0.000       0.605       0.770
+C(prompt_id)[T.P07]                        0.8400      0.039     21.486      0.000       0.763       0.917
+C(prompt_id)[T.P08]                        0.4306      0.038     11.245      0.000       0.356       0.506
+C(prompt_id)[T.P09]                        0.7316      0.048     15.170      0.000       0.637       0.826
+C(prompt_id)[T.P10]                        0.6977      0.046     15.302      0.000       0.608       0.787
+C(prompt_id)[T.P11]                        0.3625      0.043      8.474      0.000       0.279       0.446
+C(prompt_id)[T.P12]                        1.1923      0.036     33.395      0.000       1.122       1.262
+C(prompt_id)[T.P13]                        1.5084      0.034     44.175      0.000       1.441       1.575
+C(prompt_id)[T.P14]                        1.5772      0.034     45.981      0.000       1.510       1.644
+distance_from_prev_correct_j               0.0177      0.003      5.714      0.000       0.012       0.024
+layout_switch_into_j                       0.3208      0.066      4.873      0.000       0.192       0.450
+shift_required_j                          -0.2851      0.035     -8.240      0.000      -0.353      -0.217
+==============================================================================
+Omnibus:                      912.556   Durbin-Watson:                   0.202
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1347.131
+Skew:                          -0.418   Prob(JB):                    2.98e-293
+Kurtosis:                       3.941   Cond. No.                         185.
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)

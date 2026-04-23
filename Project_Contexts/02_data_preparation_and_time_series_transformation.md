@@ -566,22 +566,35 @@ Use standardized ingredients such as:
 - `z_error_suffix_len`
 - `z_geo_burden_planned`
 - `layout_switch_needed`
-- optional `z_geo_burden_error`
+
+The scalar friction signal should now be intentionally simplified. `geo_burden_error` may still exist as a separate diagnostic feature, but it should **not** be included in the canonical friction calculation.
 
 ### 16.3 Practical formula
-A reasonable fixed formula is:
+Use the following fixed weighted formula for the canonical event-level friction column `friction`:
 
 ```text
 friction_t =
-    w1 * z_log_dt
-  + w2 * is_delete
-  + w3 * z_error_suffix_len
-  + w4 * z_geo_burden_planned
-  + w5 * layout_switch_needed
-  + w6 * z_geo_burden_error
+    0.30 * z_log_dt_ms
+  + 0.25 * is_delete
+  + 0.30 * z_error_suffix_len_after
+  + 0.08 * z_geo_burden_planned
+  + 0.02 * layout_switch_needed
 ```
 
-If you want a conservative first version, use equal weights after normalization.
+This change was made because the older friction definition was too noisy for downstream use. Sparse error-side terms, especially `geo_burden_error`, produced undesirable spikes in plots and scalar waveforms.
+
+For visualization only, also create:
+
+```text
+friction_plot_smooth =
+    centered rolling mean of friction
+    with window = 5 and min_periods = 1
+    computed within each trial only
+```
+
+Use:
+- canonical `friction` for downstream modeling and exported analysis tables
+- `friction_plot_smooth` for event-trace and waveform plotting
 
 ### 16.4 Important rule
 Freeze the friction definition before running the full final analysis.
@@ -606,6 +619,7 @@ Recommended columns include:
 - distance-matrix-based burden features
 - realized error proximity features
 - final friction value
+- smoothed visualization-only friction trace
 - QC flags
 
 This table should remain event-granular.
@@ -736,7 +750,7 @@ Use for:
 - clustering with a DTW distance matrix
 
 ### TS Object B. Scalar friction waveform
-Use `friction_t` as a 1D event sequence.
+Use canonical `friction_t` as the 1D modeling sequence. Use `friction_plot_smooth` only when plotting or presenting the waveform visually.
 
 Use for:
 - Euclidean baseline

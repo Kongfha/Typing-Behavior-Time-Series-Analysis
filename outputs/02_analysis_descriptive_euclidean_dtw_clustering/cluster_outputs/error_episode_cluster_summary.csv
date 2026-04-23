@@ -1,0 +1,5 @@
+﻿cluster_id,n_windows,mean_episode_duration_ms,mean_friction,mean_max_wrong_suffix_depth,mean_delete_count,mean_recovery_step_count,mean_pause_before_first_delete_ms,dominant_prompts,dominant_participants,dominant_heuristic_styles
+1,3,131178.0,2.0036516948328775,45.333333333333336,52.666666666666664,52.666666666666664,3914.6666666666665,"P12 (1), P07 (1), P09 (1)","Bao (1), Shimmy (1), Plub (1)",deep_overshoot_then_recovery (3)
+2,6,1390.3333333333333,0.3930283095224035,4.0,3.3333333333333335,3.3333333333333335,370.0,"P12 (4), P06 (1), P05 (1)","เทพซ่า676767677 (1), Micky (1), Shimmy (1)",deep_overshoot_then_recovery (6)
+3,110,2183.5454545454545,0.1976731972925558,5.2272727272727275,4.463636363636364,4.463636363636364,625.3727272727273,"P13 (20), P05 (15), P14 (13)","superidol (10), Plub (9), Mick (8)",deep_overshoot_then_recovery (110)
+4,1,213990.0,0.5456875172487283,2.0,2.0,2.0,211.0,P09 (1),Shimmy (1),immediate_repair (1)

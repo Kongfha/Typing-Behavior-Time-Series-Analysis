@@ -1,0 +1,1 @@
+Normalization choice: each friction waveform was linearly resampled to a common length and z-normalized within waveform before Euclidean comparison.

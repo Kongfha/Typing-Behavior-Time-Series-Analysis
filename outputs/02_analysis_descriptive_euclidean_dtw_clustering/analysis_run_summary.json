@@ -1,0 +1,13 @@
+{
+  "n_manifest_items": 204,
+  "n_tables": 111,
+  "n_figures": 87,
+  "n_text_logs": 4,
+  "n_json_logs": 2,
+  "kept_main_trials": 364,
+  "participants": 26,
+  "prompts": 14,
+  "selected_error_episode_windows_for_dtw": 120,
+  "focus_trial_prompt_for_clustering": "P13",
+  "focus_prompt_position_prompt_for_clustering": "P14"
+}

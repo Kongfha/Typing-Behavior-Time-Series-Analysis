@@ -1,0 +1,21 @@
+﻿short_window_id_a,short_window_id_b,distance,participant_a,prompt_a,style_a,depth_a,pause_a,participant_b,prompt_b,style_b,depth_b,pause_b
+EP039,EP086,0.4644463411315728,Mick,P05,deep_overshoot_then_recovery,5,799.0,name,P12,deep_overshoot_then_recovery,4,348.0
+EP077,EP080,0.4832008018562378,superidol,P09,deep_overshoot_then_recovery,4,414.0,Bao,P07,deep_overshoot_then_recovery,4,413.0
+EP101,EP106,0.5448269085127172,Shimmy,P13,deep_overshoot_then_recovery,4,263.0,Shimmy,P12,deep_overshoot_then_recovery,4,252.0
+EP019,EP051,0.5468954812176281,Tw,P05,deep_overshoot_then_recovery,5,2267.0,น้ำ,P05,deep_overshoot_then_recovery,5,394.0
+EP066,EP092,0.5589906342416695,Micky,P12,deep_overshoot_then_recovery,4,254.0,Tack,P12,deep_overshoot_then_recovery,4,330.0
+EP020,EP025,0.5717921367538314,superidol,P05,deep_overshoot_then_recovery,5,1973.0,Kurosagi Ichigo,P05,deep_overshoot_then_recovery,5,1662.0
+EP014,EP018,0.5743040284128957,Bao,P06,deep_overshoot_then_recovery,6,334.0,Kurosagi Ichigo,P08,deep_overshoot_then_recovery,5,335.0
+EP041,EP061,0.5777869737003414,Plub,P13,deep_overshoot_then_recovery,5,632.0,Plub,P07,deep_overshoot_then_recovery,5,239.0
+EP034,EP057,0.5778314058634795,เจ,P14,deep_overshoot_then_recovery,5,160.0,Bao,P14,deep_overshoot_then_recovery,5,306.0
+EP012,EP032,0.5890578117111961,เทพซ่า676767677,P05,deep_overshoot_then_recovery,5,3434.0,Mick,P05,deep_overshoot_then_recovery,5,1265.0
+EP038,EP068,0.6338065434899479,march,P08,deep_overshoot_then_recovery,6,294.0,march,P13,deep_overshoot_then_recovery,4,639.0
+EP061,EP108,0.6449152453512713,Plub,P07,deep_overshoot_then_recovery,5,239.0,champion,P07,deep_overshoot_then_recovery,4,232.0
+EP018,EP061,0.6498014474069447,Kurosagi Ichigo,P08,deep_overshoot_then_recovery,5,335.0,Plub,P07,deep_overshoot_then_recovery,5,239.0
+EP011,EP031,0.6662910471322094,Plub,P09,deep_overshoot_then_recovery,9,445.0,sine,P11,deep_overshoot_then_recovery,6,497.0
+EP019,EP039,0.6673394709388906,Tw,P05,deep_overshoot_then_recovery,5,2267.0,Mick,P05,deep_overshoot_then_recovery,5,799.0
+EP048,EP111,0.6719502966410815,Tack,P13,deep_overshoot_then_recovery,5,430.0,Tack,P05,deep_overshoot_then_recovery,4,219.0
+EP052,EP086,0.6739198455907246,march,P12,deep_overshoot_then_recovery,5,338.0,name,P12,deep_overshoot_then_recovery,4,348.0
+EP039,EP051,0.6840661935801668,Mick,P05,deep_overshoot_then_recovery,5,799.0,น้ำ,P05,deep_overshoot_then_recovery,5,394.0
+EP054,EP091,0.6844431123717474,M,P03,deep_overshoot_then_recovery,5,277.0,M,P13,deep_overshoot_then_recovery,4,309.0
+EP026,EP039,0.6856791021638449,sine,P06,deep_overshoot_then_recovery,6,760.0,Mick,P05,deep_overshoot_then_recovery,5,799.0
