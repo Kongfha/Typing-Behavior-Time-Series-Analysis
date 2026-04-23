@@ -1,0 +1,15 @@
+﻿prompt_id,prompt_typing_order,length_class,condition,purpose,expected_typing_behavior,prompt_text
+P01,1,short,familiar_baseline,baseline familiar Thai,"smooth typing, low hesitation",วันนี้เราจะทำการบ้านให้เสร็จ
+P02,2,short,familiar_polite,baseline polite everyday Thai,"mostly smooth typing, low hesitation",กรุณาตอบกลับภายในวันนี้
+P04,3,short,orthographic_named_entity,test long proper noun typing difficulty,pause spikes and possible corrections,นิสิตจากจุฬาลงกรณ์มหาวิทยาลัย
+P03,4,short,formal_register,test formal bureaucratic wording,"slightly slower rhythm, higher first-key latency",ขอความกรุณาจัดทำเอกสารดังกล่าว
+P05,5,short,twisted_proverb,test expectation violation in proverb,local hesitation near the altered phrase,เข้าเมืองตาหลิ่ว ต้องหลิ่วมาตาม
+P09,6,medium,arabic_numerals,baseline numeral form with Arabic digits,relatively smooth typing for many users,ชั้นมัธยมศึกษาปีที่ 6 จะส่งรายงานจำนวน 10 หน้า
+P11,7,medium,rhythmic_repetition,test repetition and tongue-twister-like rhythmic structure,possible bursty timing and local re-typing,วันนี้ผมทักผมรักผมรอ วันไหนผมท้อผมพอผมลา
+P10,8,medium,thai_numerals,test Thai numeral and formal writing difficulty,slower rhythm around Thai numerals,ชั้นมัธยมศึกษาปีที่ ๖ จะส่งรายงานจำนวน ๑๐ หน้า
+P06,9,medium,mixed_symbols_identification,"test abbreviation, digits, slash, and hyphenated name field",local hesitation around ม.5/6 and ชื่อ-สกุล span,นักเรียน ม.5/6 ช่วยตรวจสอบ ชื่อ-สกุล ของตัวเองด้วยนะ
+P08,10,medium,formal_lexical_difficulty,test formal vocabulary and low-frequency wording,hesitation around difficult lexical items,ขอความร่วมมือจัดเตรียมเอกสารเพื่อเป็นวิทยาทานแก่นักเรียน
+P07,11,medium,formal_educational,compare plain versus formal educational register,longer pauses around formal words,นักเรียนพึงศึกษาเล่าเรียนอย่างสม่ำเสมอเพื่อเตรียมความพร้อมในการสอบ
+P12,12,long,long_familiar_expository,long readable baseline for localization analysis,mostly smooth with minor pauses at long words,วันนี้ครูขอให้นักเรียนเขียนสรุปเรื่องสุภาษิตไทยอย่างกระชับและชัดเจน โดยให้ยกตัวอย่างหนึ่งสำนวนและอธิบายความหมายด้วยภาษาของตนเอง
+P14,13,long,long_mixed_difficulty,"test mixed difficulty including proper noun, formal words, and Thai numerals",multiple local hesitation zones,สวัสดีคุณชาคริษฐ์ วันนี้เราขอให้คุณจัดทำหนังสือเรื่องการสอนภาษาไทยสำหรับนักเรียนชั้นมัธยมศึกษาปีที่ ๖ เพื่อเป็นวิทยาทานแก่โรงเรียนในเครือพันธมิตร
+P13,14,long,long_formal_bureaucratic,test sustained formal-register friction,overall slower typing and diffuse hesitation,ทางคณะผู้จัดทำขอความกรุณาให้นักเรียนจัดทำรายงานเรื่องสุภาษิตและคำพังเพย โดยเขียนอธิบายเนื้อหาให้ครบถ้วนเพื่อเป็นประโยชน์ต่อการเรียนรู้ในภายหลัง
