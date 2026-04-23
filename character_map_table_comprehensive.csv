@@ -1,0 +1,190 @@
+map_id,char,unicode_codepoint,unicode_name,script_family,char_class,layout_required,source_layout_name,shift_required,preferred_for_prompt_demand,physical_key_id,distance_node_id,key_row,key_column_index,zone_proxy,hand_proxy,same_layout_pair_char,same_key_en_unshift,same_key_en_shift,same_key_th_unshift,same_key_th_shift,is_space,is_thai_script,is_english_script,is_punctuation_or_symbol,notes
+COMMON_Space, ,U+0020,SPACE,common,whitespace,COMMON,COMMON,0,1,Space,Space,space,0,space,thumb, , , , , ,1,0,0,0,Space is treated as COMMON; layout-switch burden should usually ignore same-layout characters separated by spaces.
+TH_Backquote_base,_,U+005F,LOW LINE,english,english_symbol,TH,Thai_Kedmanee,0,0,Backquote,Backquote,number,0,left,left,%,`,~,_,%,0,0,1,1,Character appears on more than one layout/key-state combination; use preferred_for_prompt_demand plus project rules to resolve joins.
+TH_Backquote_shift,%,U+0025,PERCENT SIGN,english,english_symbol,TH,Thai_Kedmanee,1,0,Backquote,Backquote,number,0,left,left,_,`,~,_,%,0,0,1,1,Character appears on more than one layout/key-state combination; use preferred_for_prompt_demand plus project rules to resolve joins.
+TH_Digit1_base,ๅ,U+0E45,THAI CHARACTER LAKKHANGYAO,thai,thai_vowel_mark,TH,Thai_Kedmanee,0,1,Digit1,Digit1,number,1,left,left,+,1,!,ๅ,+,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Digit1_shift,+,U+002B,PLUS SIGN,english,english_symbol,TH,Thai_Kedmanee,1,0,Digit1,Digit1,number,1,left,left,ๅ,1,!,ๅ,+,0,0,1,1,Character appears on more than one layout/key-state combination; use preferred_for_prompt_demand plus project rules to resolve joins.
+TH_Digit2_base,/,U+002F,SOLIDUS,english,english_punctuation,TH,Thai_Kedmanee,0,0,Digit2,Digit2,number,2,left,left,๑,2,@,/,๑,0,0,1,1,Character appears on more than one layout/key-state combination; use preferred_for_prompt_demand plus project rules to resolve joins.
+TH_Digit2_shift,๑,U+0E51,THAI DIGIT ONE,thai,thai_numeral,TH,Thai_Kedmanee,1,1,Digit2,Digit2,number,2,left,left,/,2,@,/,๑,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Digit3_base,-,U+002D,HYPHEN-MINUS,english,english_punctuation,TH,Thai_Kedmanee,0,0,Digit3,Digit3,number,3,left,left,๒,3,#,-,๒,0,0,1,1,Character appears on more than one layout/key-state combination; use preferred_for_prompt_demand plus project rules to resolve joins.
+TH_Digit3_shift,๒,U+0E52,THAI DIGIT TWO,thai,thai_numeral,TH,Thai_Kedmanee,1,1,Digit3,Digit3,number,3,left,left,-,3,#,-,๒,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Digit4_base,ภ,U+0E20,THAI CHARACTER PHO SAMPHAO,thai,thai_consonant,TH,Thai_Kedmanee,0,1,Digit4,Digit4,number,4,left,left,๓,4,$,ภ,๓,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Digit4_shift,๓,U+0E53,THAI DIGIT THREE,thai,thai_numeral,TH,Thai_Kedmanee,1,1,Digit4,Digit4,number,4,left,left,ภ,4,$,ภ,๓,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Digit5_base,ถ,U+0E16,THAI CHARACTER THO THUNG,thai,thai_consonant,TH,Thai_Kedmanee,0,1,Digit5,Digit5,number,5,center,right,๔,5,%,ถ,๔,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Digit5_shift,๔,U+0E54,THAI DIGIT FOUR,thai,thai_numeral,TH,Thai_Kedmanee,1,1,Digit5,Digit5,number,5,center,right,ถ,5,%,ถ,๔,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Digit6_base,ุ,U+0E38,THAI CHARACTER SARA U,thai,thai_vowel_mark,TH,Thai_Kedmanee,0,1,Digit6,Digit6,number,6,center,right,ู,6,^,ุ,ู,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Digit6_shift,ู,U+0E39,THAI CHARACTER SARA UU,thai,thai_vowel_mark,TH,Thai_Kedmanee,1,1,Digit6,Digit6,number,6,center,right,ุ,6,^,ุ,ู,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Digit7_base,ึ,U+0E36,THAI CHARACTER SARA UE,thai,thai_vowel_mark,TH,Thai_Kedmanee,0,1,Digit7,Digit7,number,7,center,right,฿,7,&,ึ,฿,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Digit7_shift,฿,U+0E3F,THAI CURRENCY SYMBOL BAHT,thai,thai_symbol,TH,Thai_Kedmanee,1,1,Digit7,Digit7,number,7,center,right,ึ,7,&,ึ,฿,0,1,0,1,Thai script character on standard Thai Kedmanee layout.
+TH_Digit8_base,ค,U+0E04,THAI CHARACTER KHO KHWAI,thai,thai_consonant,TH,Thai_Kedmanee,0,1,Digit8,Digit8,number,8,center,right,๕,8,*,ค,๕,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Digit8_shift,๕,U+0E55,THAI DIGIT FIVE,thai,thai_numeral,TH,Thai_Kedmanee,1,1,Digit8,Digit8,number,8,center,right,ค,8,*,ค,๕,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Digit9_base,ต,U+0E15,THAI CHARACTER TO TAO,thai,thai_consonant,TH,Thai_Kedmanee,0,1,Digit9,Digit9,number,9,right,right,๖,9,(,ต,๖,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Digit9_shift,๖,U+0E56,THAI DIGIT SIX,thai,thai_numeral,TH,Thai_Kedmanee,1,1,Digit9,Digit9,number,9,right,right,ต,9,(,ต,๖,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Digit0_base,จ,U+0E08,THAI CHARACTER CHO CHAN,thai,thai_consonant,TH,Thai_Kedmanee,0,1,Digit0,Digit0,number,10,right,right,๗,0,),จ,๗,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Digit0_shift,๗,U+0E57,THAI DIGIT SEVEN,thai,thai_numeral,TH,Thai_Kedmanee,1,1,Digit0,Digit0,number,10,right,right,จ,0,),จ,๗,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Minus_base,ข,U+0E02,THAI CHARACTER KHO KHAI,thai,thai_consonant,TH,Thai_Kedmanee,0,1,Minus,Minus,number,11,right,right,๘,-,_,ข,๘,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Minus_shift,๘,U+0E58,THAI DIGIT EIGHT,thai,thai_numeral,TH,Thai_Kedmanee,1,1,Minus,Minus,number,11,right,right,ข,-,_,ข,๘,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Equal_base,ช,U+0E0A,THAI CHARACTER CHO CHANG,thai,thai_consonant,TH,Thai_Kedmanee,0,1,Equal,Equal,number,12,right,right,๙,=,+,ช,๙,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Equal_shift,๙,U+0E59,THAI DIGIT NINE,thai,thai_numeral,TH,Thai_Kedmanee,1,1,Equal,Equal,number,12,right,right,ช,=,+,ช,๙,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyQ_base,ๆ,U+0E46,THAI CHARACTER MAIYAMOK,thai,thai_punctuation,TH,Thai_Kedmanee,0,1,KeyQ,KeyQ,top,0,left,left,๐,q,Q,ๆ,๐,0,1,0,1,Thai script character on standard Thai Kedmanee layout.
+TH_KeyQ_shift,๐,U+0E50,THAI DIGIT ZERO,thai,thai_numeral,TH,Thai_Kedmanee,1,1,KeyQ,KeyQ,top,0,left,left,ๆ,q,Q,ๆ,๐,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyW_base,ไ,U+0E44,THAI CHARACTER SARA AI MAIMALAI,thai,thai_vowel_mark,TH,Thai_Kedmanee,0,1,KeyW,KeyW,top,1,left,left,"""",w,W,ไ,"""",0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyW_shift,"""",U+0022,QUOTATION MARK,english,english_symbol,TH,Thai_Kedmanee,1,0,KeyW,KeyW,top,1,left,left,ไ,w,W,ไ,"""",0,0,1,1,Character appears on more than one layout/key-state combination; use preferred_for_prompt_demand plus project rules to resolve joins.
+TH_KeyE_base,ำ,U+0E33,THAI CHARACTER SARA AM,thai,thai_vowel_mark,TH,Thai_Kedmanee,0,1,KeyE,KeyE,top,2,left,left,ฎ,e,E,ำ,ฎ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyE_shift,ฎ,U+0E0E,THAI CHARACTER DO CHADA,thai,thai_consonant,TH,Thai_Kedmanee,1,1,KeyE,KeyE,top,2,left,left,ำ,e,E,ำ,ฎ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyR_base,พ,U+0E1E,THAI CHARACTER PHO PHAN,thai,thai_consonant,TH,Thai_Kedmanee,0,1,KeyR,KeyR,top,3,left,left,ฑ,r,R,พ,ฑ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyR_shift,ฑ,U+0E11,THAI CHARACTER THO NANGMONTHO,thai,thai_consonant,TH,Thai_Kedmanee,1,1,KeyR,KeyR,top,3,left,left,พ,r,R,พ,ฑ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyT_base,ะ,U+0E30,THAI CHARACTER SARA A,thai,thai_vowel_mark,TH,Thai_Kedmanee,0,1,KeyT,KeyT,top,4,left,left,ธ,t,T,ะ,ธ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyT_shift,ธ,U+0E18,THAI CHARACTER THO THONG,thai,thai_consonant,TH,Thai_Kedmanee,1,1,KeyT,KeyT,top,4,left,left,ะ,t,T,ะ,ธ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyY_base,ั,U+0E31,THAI CHARACTER MAI HAN-AKAT,thai,thai_vowel_mark,TH,Thai_Kedmanee,0,1,KeyY,KeyY,top,5,center,right,ํ,y,Y,ั,ํ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyY_shift,ํ,U+0E4D,THAI CHARACTER NIKHAHIT,thai,thai_diacritic,TH,Thai_Kedmanee,1,1,KeyY,KeyY,top,5,center,right,ั,y,Y,ั,ํ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyU_base,ี,U+0E35,THAI CHARACTER SARA II,thai,thai_vowel_mark,TH,Thai_Kedmanee,0,1,KeyU,KeyU,top,6,center,right,๊,u,U,ี,๊,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyU_shift,๊,U+0E4A,THAI CHARACTER MAI TRI,thai,thai_tone_mark,TH,Thai_Kedmanee,1,1,KeyU,KeyU,top,6,center,right,ี,u,U,ี,๊,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyI_base,ร,U+0E23,THAI CHARACTER RO RUA,thai,thai_consonant,TH,Thai_Kedmanee,0,1,KeyI,KeyI,top,7,center,right,ณ,i,I,ร,ณ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyI_shift,ณ,U+0E13,THAI CHARACTER NO NEN,thai,thai_consonant,TH,Thai_Kedmanee,1,1,KeyI,KeyI,top,7,center,right,ร,i,I,ร,ณ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyO_base,น,U+0E19,THAI CHARACTER NO NU,thai,thai_consonant,TH,Thai_Kedmanee,0,1,KeyO,KeyO,top,8,right,right,ฯ,o,O,น,ฯ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyO_shift,ฯ,U+0E2F,THAI CHARACTER PAIYANNOI,thai,thai_punctuation,TH,Thai_Kedmanee,1,1,KeyO,KeyO,top,8,right,right,น,o,O,น,ฯ,0,1,0,1,Thai script character on standard Thai Kedmanee layout.
+TH_KeyP_base,ย,U+0E22,THAI CHARACTER YO YAK,thai,thai_consonant,TH,Thai_Kedmanee,0,1,KeyP,KeyP,top,9,right,right,ญ,p,P,ย,ญ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyP_shift,ญ,U+0E0D,THAI CHARACTER YO YING,thai,thai_consonant,TH,Thai_Kedmanee,1,1,KeyP,KeyP,top,9,right,right,ย,p,P,ย,ญ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_BracketLeft_base,บ,U+0E1A,THAI CHARACTER BO BAIMAI,thai,thai_consonant,TH,Thai_Kedmanee,0,1,BracketLeft,BracketLeft,top,10,right,right,ฐ,[,{,บ,ฐ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_BracketLeft_shift,ฐ,U+0E10,THAI CHARACTER THO THAN,thai,thai_consonant,TH,Thai_Kedmanee,1,1,BracketLeft,BracketLeft,top,10,right,right,บ,[,{,บ,ฐ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_BracketRight_base,ล,U+0E25,THAI CHARACTER LO LING,thai,thai_consonant,TH,Thai_Kedmanee,0,1,BracketRight,BracketRight,top,11,right,right,",",],},ล,",",0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_BracketRight_shift,",",U+002C,COMMA,english,english_punctuation,TH,Thai_Kedmanee,1,0,BracketRight,BracketRight,top,11,right,right,ล,],},ล,",",0,0,1,1,Character appears on more than one layout/key-state combination; use preferred_for_prompt_demand plus project rules to resolve joins.
+TH_Backslash_base,ฃ,U+0E03,THAI CHARACTER KHO KHUAT,thai,thai_consonant,TH,Thai_Kedmanee,0,1,Backslash,Backslash,top,12,right,right,ฅ,\,|,ฃ,ฅ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Backslash_shift,ฅ,U+0E05,THAI CHARACTER KHO KHON,thai,thai_consonant,TH,Thai_Kedmanee,1,1,Backslash,Backslash,top,12,right,right,ฃ,\,|,ฃ,ฅ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyA_base,ฟ,U+0E1F,THAI CHARACTER FO FAN,thai,thai_consonant,TH,Thai_Kedmanee,0,1,KeyA,KeyA,home,0,left,left,ฤ,a,A,ฟ,ฤ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyA_shift,ฤ,U+0E24,THAI CHARACTER RU,thai,thai_vowel_letter,TH,Thai_Kedmanee,1,1,KeyA,KeyA,home,0,left,left,ฟ,a,A,ฟ,ฤ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyS_base,ห,U+0E2B,THAI CHARACTER HO HIP,thai,thai_consonant,TH,Thai_Kedmanee,0,1,KeyS,KeyS,home,1,left,left,ฆ,s,S,ห,ฆ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyS_shift,ฆ,U+0E06,THAI CHARACTER KHO RAKHANG,thai,thai_consonant,TH,Thai_Kedmanee,1,1,KeyS,KeyS,home,1,left,left,ห,s,S,ห,ฆ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyD_base,ก,U+0E01,THAI CHARACTER KO KAI,thai,thai_consonant,TH,Thai_Kedmanee,0,1,KeyD,KeyD,home,2,left,left,ฏ,d,D,ก,ฏ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyD_shift,ฏ,U+0E0F,THAI CHARACTER TO PATAK,thai,thai_consonant,TH,Thai_Kedmanee,1,1,KeyD,KeyD,home,2,left,left,ก,d,D,ก,ฏ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyF_base,ด,U+0E14,THAI CHARACTER DO DEK,thai,thai_consonant,TH,Thai_Kedmanee,0,1,KeyF,KeyF,home,3,left,left,โ,f,F,ด,โ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyF_shift,โ,U+0E42,THAI CHARACTER SARA O,thai,thai_vowel_mark,TH,Thai_Kedmanee,1,1,KeyF,KeyF,home,3,left,left,ด,f,F,ด,โ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyG_base,เ,U+0E40,THAI CHARACTER SARA E,thai,thai_vowel_mark,TH,Thai_Kedmanee,0,1,KeyG,KeyG,home,4,left,left,ฌ,g,G,เ,ฌ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyG_shift,ฌ,U+0E0C,THAI CHARACTER CHO CHOE,thai,thai_consonant,TH,Thai_Kedmanee,1,1,KeyG,KeyG,home,4,left,left,เ,g,G,เ,ฌ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyH_base,้,U+0E49,THAI CHARACTER MAI THO,thai,thai_tone_mark,TH,Thai_Kedmanee,0,1,KeyH,KeyH,home,5,center,right,็,h,H,้,็,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyH_shift,็,U+0E47,THAI CHARACTER MAITAIKHU,thai,thai_diacritic,TH,Thai_Kedmanee,1,1,KeyH,KeyH,home,5,center,right,้,h,H,้,็,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyJ_base,่,U+0E48,THAI CHARACTER MAI EK,thai,thai_tone_mark,TH,Thai_Kedmanee,0,1,KeyJ,KeyJ,home,6,right,right,๋,j,J,่,๋,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyJ_shift,๋,U+0E4B,THAI CHARACTER MAI CHATTAWA,thai,thai_tone_mark,TH,Thai_Kedmanee,1,1,KeyJ,KeyJ,home,6,right,right,่,j,J,่,๋,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyK_base,า,U+0E32,THAI CHARACTER SARA AA,thai,thai_vowel_mark,TH,Thai_Kedmanee,0,1,KeyK,KeyK,home,7,right,right,ษ,k,K,า,ษ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyK_shift,ษ,U+0E29,THAI CHARACTER SO RUSI,thai,thai_consonant,TH,Thai_Kedmanee,1,1,KeyK,KeyK,home,7,right,right,า,k,K,า,ษ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyL_base,ส,U+0E2A,THAI CHARACTER SO SUA,thai,thai_consonant,TH,Thai_Kedmanee,0,1,KeyL,KeyL,home,8,right,right,ศ,l,L,ส,ศ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyL_shift,ศ,U+0E28,THAI CHARACTER SO SALA,thai,thai_consonant,TH,Thai_Kedmanee,1,1,KeyL,KeyL,home,8,right,right,ส,l,L,ส,ศ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Semicolon_base,ว,U+0E27,THAI CHARACTER WO WAEN,thai,thai_consonant,TH,Thai_Kedmanee,0,1,Semicolon,Semicolon,home,9,right,right,ซ,;,:,ว,ซ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Semicolon_shift,ซ,U+0E0B,THAI CHARACTER SO SO,thai,thai_consonant,TH,Thai_Kedmanee,1,1,Semicolon,Semicolon,home,9,right,right,ว,;,:,ว,ซ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Quote_base,ง,U+0E07,THAI CHARACTER NGO NGU,thai,thai_consonant,TH,Thai_Kedmanee,0,1,Quote,Quote,home,10,right,right,.,',"""",ง,.,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Quote_shift,.,U+002E,FULL STOP,english,english_punctuation,TH,Thai_Kedmanee,1,0,Quote,Quote,home,10,right,right,ง,',"""",ง,.,0,0,1,1,Character appears on more than one layout/key-state combination; use preferred_for_prompt_demand plus project rules to resolve joins.
+TH_KeyZ_base,ผ,U+0E1C,THAI CHARACTER PHO PHUNG,thai,thai_consonant,TH,Thai_Kedmanee,0,1,KeyZ,KeyZ,bottom,0,left,left,(,z,Z,ผ,(,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyZ_shift,(,U+0028,LEFT PARENTHESIS,english,english_symbol,TH,Thai_Kedmanee,1,0,KeyZ,KeyZ,bottom,0,left,left,ผ,z,Z,ผ,(,0,0,1,1,Character appears on more than one layout/key-state combination; use preferred_for_prompt_demand plus project rules to resolve joins.
+TH_KeyX_base,ป,U+0E1B,THAI CHARACTER PO PLA,thai,thai_consonant,TH,Thai_Kedmanee,0,1,KeyX,KeyX,bottom,1,left,left,),x,X,ป,),0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyX_shift,),U+0029,RIGHT PARENTHESIS,english,english_symbol,TH,Thai_Kedmanee,1,0,KeyX,KeyX,bottom,1,left,left,ป,x,X,ป,),0,0,1,1,Character appears on more than one layout/key-state combination; use preferred_for_prompt_demand plus project rules to resolve joins.
+TH_KeyC_base,แ,U+0E41,THAI CHARACTER SARA AE,thai,thai_vowel_mark,TH,Thai_Kedmanee,0,1,KeyC,KeyC,bottom,2,left,left,ฉ,c,C,แ,ฉ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyC_shift,ฉ,U+0E09,THAI CHARACTER CHO CHING,thai,thai_consonant,TH,Thai_Kedmanee,1,1,KeyC,KeyC,bottom,2,left,left,แ,c,C,แ,ฉ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyV_base,อ,U+0E2D,THAI CHARACTER O ANG,thai,thai_consonant,TH,Thai_Kedmanee,0,1,KeyV,KeyV,bottom,3,left,left,ฮ,v,V,อ,ฮ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyV_shift,ฮ,U+0E2E,THAI CHARACTER HO NOKHUK,thai,thai_consonant,TH,Thai_Kedmanee,1,1,KeyV,KeyV,bottom,3,left,left,อ,v,V,อ,ฮ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyB_base,ิ,U+0E34,THAI CHARACTER SARA I,thai,thai_vowel_mark,TH,Thai_Kedmanee,0,1,KeyB,KeyB,bottom,4,left,left,ฺ,b,B,ิ,ฺ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyB_shift,ฺ,U+0E3A,THAI CHARACTER PHINTHU,thai,thai_diacritic,TH,Thai_Kedmanee,1,1,KeyB,KeyB,bottom,4,left,left,ิ,b,B,ิ,ฺ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyN_base,ท,U+0E17,THAI CHARACTER THO THAHAN,thai,thai_consonant,TH,Thai_Kedmanee,0,1,KeyN,KeyN,bottom,5,center,right,์,n,N,ท,์,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyN_shift,์,U+0E4C,THAI CHARACTER THANTHAKHAT,thai,thai_diacritic,TH,Thai_Kedmanee,1,1,KeyN,KeyN,bottom,5,center,right,ท,n,N,ท,์,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyM_base,ม,U+0E21,THAI CHARACTER MO MA,thai,thai_consonant,TH,Thai_Kedmanee,0,1,KeyM,KeyM,bottom,6,right,right,?,m,M,ม,?,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_KeyM_shift,?,U+003F,QUESTION MARK,english,english_symbol,TH,Thai_Kedmanee,1,0,KeyM,KeyM,bottom,6,right,right,ม,m,M,ม,?,0,0,1,1,Character appears on more than one layout/key-state combination; use preferred_for_prompt_demand plus project rules to resolve joins.
+TH_Comma_base,ม,U+0E21,THAI CHARACTER MO MA,thai,thai_consonant,TH,Thai_Kedmanee,0,1,Comma,Comma,bottom,7,right,right,ฒ,",",<,ม,ฒ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Comma_shift,ฒ,U+0E12,THAI CHARACTER THO PHUTHAO,thai,thai_consonant,TH,Thai_Kedmanee,1,1,Comma,Comma,bottom,7,right,right,ม,",",<,ม,ฒ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Period_base,ใ,U+0E43,THAI CHARACTER SARA AI MAIMUAN,thai,thai_vowel_mark,TH,Thai_Kedmanee,0,1,Period,Period,bottom,8,right,right,ฬ,.,>,ใ,ฬ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Period_shift,ฬ,U+0E2C,THAI CHARACTER LO CHULA,thai,thai_consonant,TH,Thai_Kedmanee,1,1,Period,Period,bottom,8,right,right,ใ,.,>,ใ,ฬ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Slash_base,ฝ,U+0E1D,THAI CHARACTER FO FA,thai,thai_consonant,TH,Thai_Kedmanee,0,1,Slash,Slash,bottom,9,right,right,ฦ,/,?,ฝ,ฦ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+TH_Slash_shift,ฦ,U+0E26,THAI CHARACTER LU,thai,thai_vowel_letter,TH,Thai_Kedmanee,1,1,Slash,Slash,bottom,9,right,right,ฝ,/,?,ฝ,ฦ,0,1,0,0,Thai script character on standard Thai Kedmanee layout.
+EN_Backquote_base,`,U+0060,GRAVE ACCENT,english,english_punctuation,EN,US_QWERTY,0,1,Backquote,Backquote,number,0,left,left,~,`,~,_,%,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Backquote_shift,~,U+007E,TILDE,english,english_symbol,EN,US_QWERTY,1,1,Backquote,Backquote,number,0,left,left,`,`,~,_,%,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Digit1_base,1,U+0031,DIGIT ONE,english,arabic_numeral,EN,US_QWERTY,0,1,Digit1,Digit1,number,1,left,left,!,1,!,ๅ,+,0,0,1,0,Arabic numeral. Default project rule assigns Arabic digits to EN layout.
+EN_Digit1_shift,!,U+0021,EXCLAMATION MARK,english,english_symbol,EN,US_QWERTY,1,1,Digit1,Digit1,number,1,left,left,1,1,!,ๅ,+,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Digit2_base,2,U+0032,DIGIT TWO,english,arabic_numeral,EN,US_QWERTY,0,1,Digit2,Digit2,number,2,left,left,@,2,@,/,๑,0,0,1,0,Arabic numeral. Default project rule assigns Arabic digits to EN layout.
+EN_Digit2_shift,@,U+0040,COMMERCIAL AT,english,english_symbol,EN,US_QWERTY,1,1,Digit2,Digit2,number,2,left,left,2,2,@,/,๑,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Digit3_base,3,U+0033,DIGIT THREE,english,arabic_numeral,EN,US_QWERTY,0,1,Digit3,Digit3,number,3,left,left,#,3,#,-,๒,0,0,1,0,Arabic numeral. Default project rule assigns Arabic digits to EN layout.
+EN_Digit3_shift,#,U+0023,NUMBER SIGN,english,english_symbol,EN,US_QWERTY,1,1,Digit3,Digit3,number,3,left,left,3,3,#,-,๒,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Digit4_base,4,U+0034,DIGIT FOUR,english,arabic_numeral,EN,US_QWERTY,0,1,Digit4,Digit4,number,4,left,left,$,4,$,ภ,๓,0,0,1,0,Arabic numeral. Default project rule assigns Arabic digits to EN layout.
+EN_Digit4_shift,$,U+0024,DOLLAR SIGN,english,english_symbol,EN,US_QWERTY,1,1,Digit4,Digit4,number,4,left,left,4,4,$,ภ,๓,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Digit5_base,5,U+0035,DIGIT FIVE,english,arabic_numeral,EN,US_QWERTY,0,1,Digit5,Digit5,number,5,center,right,%,5,%,ถ,๔,0,0,1,0,Arabic numeral. Default project rule assigns Arabic digits to EN layout.
+EN_Digit5_shift,%,U+0025,PERCENT SIGN,english,english_symbol,EN,US_QWERTY,1,1,Digit5,Digit5,number,5,center,right,5,5,%,ถ,๔,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Digit6_base,6,U+0036,DIGIT SIX,english,arabic_numeral,EN,US_QWERTY,0,1,Digit6,Digit6,number,6,center,right,^,6,^,ุ,ู,0,0,1,0,Arabic numeral. Default project rule assigns Arabic digits to EN layout.
+EN_Digit6_shift,^,U+005E,CIRCUMFLEX ACCENT,english,english_symbol,EN,US_QWERTY,1,1,Digit6,Digit6,number,6,center,right,6,6,^,ุ,ู,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Digit7_base,7,U+0037,DIGIT SEVEN,english,arabic_numeral,EN,US_QWERTY,0,1,Digit7,Digit7,number,7,center,right,&,7,&,ึ,฿,0,0,1,0,Arabic numeral. Default project rule assigns Arabic digits to EN layout.
+EN_Digit7_shift,&,U+0026,AMPERSAND,english,english_symbol,EN,US_QWERTY,1,1,Digit7,Digit7,number,7,center,right,7,7,&,ึ,฿,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Digit8_base,8,U+0038,DIGIT EIGHT,english,arabic_numeral,EN,US_QWERTY,0,1,Digit8,Digit8,number,8,center,right,*,8,*,ค,๕,0,0,1,0,Arabic numeral. Default project rule assigns Arabic digits to EN layout.
+EN_Digit8_shift,*,U+002A,ASTERISK,english,english_symbol,EN,US_QWERTY,1,1,Digit8,Digit8,number,8,center,right,8,8,*,ค,๕,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Digit9_base,9,U+0039,DIGIT NINE,english,arabic_numeral,EN,US_QWERTY,0,1,Digit9,Digit9,number,9,right,right,(,9,(,ต,๖,0,0,1,0,Arabic numeral. Default project rule assigns Arabic digits to EN layout.
+EN_Digit9_shift,(,U+0028,LEFT PARENTHESIS,english,english_symbol,EN,US_QWERTY,1,1,Digit9,Digit9,number,9,right,right,9,9,(,ต,๖,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Digit0_base,0,U+0030,DIGIT ZERO,english,arabic_numeral,EN,US_QWERTY,0,1,Digit0,Digit0,number,10,right,right,),0,),จ,๗,0,0,1,0,Arabic numeral. Default project rule assigns Arabic digits to EN layout.
+EN_Digit0_shift,),U+0029,RIGHT PARENTHESIS,english,english_symbol,EN,US_QWERTY,1,1,Digit0,Digit0,number,10,right,right,0,0,),จ,๗,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Minus_base,-,U+002D,HYPHEN-MINUS,english,english_punctuation,EN,US_QWERTY,0,1,Minus,Minus,number,11,right,right,_,-,_,ข,๘,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Minus_shift,_,U+005F,LOW LINE,english,english_symbol,EN,US_QWERTY,1,1,Minus,Minus,number,11,right,right,-,-,_,ข,๘,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Equal_base,=,U+003D,EQUALS SIGN,english,english_punctuation,EN,US_QWERTY,0,1,Equal,Equal,number,12,right,right,+,=,+,ช,๙,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Equal_shift,+,U+002B,PLUS SIGN,english,english_symbol,EN,US_QWERTY,1,1,Equal,Equal,number,12,right,right,=,=,+,ช,๙,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_KeyQ_base,q,U+0071,LATIN SMALL LETTER Q,english,latin_lower,EN,US_QWERTY,0,1,KeyQ,KeyQ,top,0,left,left,Q,q,Q,ๆ,๐,0,0,1,0,
+EN_KeyQ_shift,Q,U+0051,LATIN CAPITAL LETTER Q,english,latin_upper,EN,US_QWERTY,1,1,KeyQ,KeyQ,top,0,left,left,q,q,Q,ๆ,๐,0,0,1,0,
+EN_KeyW_base,w,U+0077,LATIN SMALL LETTER W,english,latin_lower,EN,US_QWERTY,0,1,KeyW,KeyW,top,1,left,left,W,w,W,ไ,"""",0,0,1,0,
+EN_KeyW_shift,W,U+0057,LATIN CAPITAL LETTER W,english,latin_upper,EN,US_QWERTY,1,1,KeyW,KeyW,top,1,left,left,w,w,W,ไ,"""",0,0,1,0,
+EN_KeyE_base,e,U+0065,LATIN SMALL LETTER E,english,latin_lower,EN,US_QWERTY,0,1,KeyE,KeyE,top,2,left,left,E,e,E,ำ,ฎ,0,0,1,0,
+EN_KeyE_shift,E,U+0045,LATIN CAPITAL LETTER E,english,latin_upper,EN,US_QWERTY,1,1,KeyE,KeyE,top,2,left,left,e,e,E,ำ,ฎ,0,0,1,0,
+EN_KeyR_base,r,U+0072,LATIN SMALL LETTER R,english,latin_lower,EN,US_QWERTY,0,1,KeyR,KeyR,top,3,left,left,R,r,R,พ,ฑ,0,0,1,0,
+EN_KeyR_shift,R,U+0052,LATIN CAPITAL LETTER R,english,latin_upper,EN,US_QWERTY,1,1,KeyR,KeyR,top,3,left,left,r,r,R,พ,ฑ,0,0,1,0,
+EN_KeyT_base,t,U+0074,LATIN SMALL LETTER T,english,latin_lower,EN,US_QWERTY,0,1,KeyT,KeyT,top,4,left,left,T,t,T,ะ,ธ,0,0,1,0,
+EN_KeyT_shift,T,U+0054,LATIN CAPITAL LETTER T,english,latin_upper,EN,US_QWERTY,1,1,KeyT,KeyT,top,4,left,left,t,t,T,ะ,ธ,0,0,1,0,
+EN_KeyY_base,y,U+0079,LATIN SMALL LETTER Y,english,latin_lower,EN,US_QWERTY,0,1,KeyY,KeyY,top,5,center,right,Y,y,Y,ั,ํ,0,0,1,0,
+EN_KeyY_shift,Y,U+0059,LATIN CAPITAL LETTER Y,english,latin_upper,EN,US_QWERTY,1,1,KeyY,KeyY,top,5,center,right,y,y,Y,ั,ํ,0,0,1,0,
+EN_KeyU_base,u,U+0075,LATIN SMALL LETTER U,english,latin_lower,EN,US_QWERTY,0,1,KeyU,KeyU,top,6,center,right,U,u,U,ี,๊,0,0,1,0,
+EN_KeyU_shift,U,U+0055,LATIN CAPITAL LETTER U,english,latin_upper,EN,US_QWERTY,1,1,KeyU,KeyU,top,6,center,right,u,u,U,ี,๊,0,0,1,0,
+EN_KeyI_base,i,U+0069,LATIN SMALL LETTER I,english,latin_lower,EN,US_QWERTY,0,1,KeyI,KeyI,top,7,center,right,I,i,I,ร,ณ,0,0,1,0,
+EN_KeyI_shift,I,U+0049,LATIN CAPITAL LETTER I,english,latin_upper,EN,US_QWERTY,1,1,KeyI,KeyI,top,7,center,right,i,i,I,ร,ณ,0,0,1,0,
+EN_KeyO_base,o,U+006F,LATIN SMALL LETTER O,english,latin_lower,EN,US_QWERTY,0,1,KeyO,KeyO,top,8,right,right,O,o,O,น,ฯ,0,0,1,0,
+EN_KeyO_shift,O,U+004F,LATIN CAPITAL LETTER O,english,latin_upper,EN,US_QWERTY,1,1,KeyO,KeyO,top,8,right,right,o,o,O,น,ฯ,0,0,1,0,
+EN_KeyP_base,p,U+0070,LATIN SMALL LETTER P,english,latin_lower,EN,US_QWERTY,0,1,KeyP,KeyP,top,9,right,right,P,p,P,ย,ญ,0,0,1,0,
+EN_KeyP_shift,P,U+0050,LATIN CAPITAL LETTER P,english,latin_upper,EN,US_QWERTY,1,1,KeyP,KeyP,top,9,right,right,p,p,P,ย,ญ,0,0,1,0,
+EN_BracketLeft_base,[,U+005B,LEFT SQUARE BRACKET,english,english_punctuation,EN,US_QWERTY,0,1,BracketLeft,BracketLeft,top,10,right,right,{,[,{,บ,ฐ,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_BracketLeft_shift,{,U+007B,LEFT CURLY BRACKET,english,english_symbol,EN,US_QWERTY,1,1,BracketLeft,BracketLeft,top,10,right,right,[,[,{,บ,ฐ,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_BracketRight_base,],U+005D,RIGHT SQUARE BRACKET,english,english_punctuation,EN,US_QWERTY,0,1,BracketRight,BracketRight,top,11,right,right,},],},ล,",",0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_BracketRight_shift,},U+007D,RIGHT CURLY BRACKET,english,english_symbol,EN,US_QWERTY,1,1,BracketRight,BracketRight,top,11,right,right,],],},ล,",",0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Backslash_base,\,U+005C,REVERSE SOLIDUS,english,english_punctuation,EN,US_QWERTY,0,1,Backslash,Backslash,top,12,right,right,|,\,|,ฃ,ฅ,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Backslash_shift,|,U+007C,VERTICAL LINE,english,english_symbol,EN,US_QWERTY,1,1,Backslash,Backslash,top,12,right,right,\,\,|,ฃ,ฅ,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_KeyA_base,a,U+0061,LATIN SMALL LETTER A,english,latin_lower,EN,US_QWERTY,0,1,KeyA,KeyA,home,0,left,left,A,a,A,ฟ,ฤ,0,0,1,0,
+EN_KeyA_shift,A,U+0041,LATIN CAPITAL LETTER A,english,latin_upper,EN,US_QWERTY,1,1,KeyA,KeyA,home,0,left,left,a,a,A,ฟ,ฤ,0,0,1,0,
+EN_KeyS_base,s,U+0073,LATIN SMALL LETTER S,english,latin_lower,EN,US_QWERTY,0,1,KeyS,KeyS,home,1,left,left,S,s,S,ห,ฆ,0,0,1,0,
+EN_KeyS_shift,S,U+0053,LATIN CAPITAL LETTER S,english,latin_upper,EN,US_QWERTY,1,1,KeyS,KeyS,home,1,left,left,s,s,S,ห,ฆ,0,0,1,0,
+EN_KeyD_base,d,U+0064,LATIN SMALL LETTER D,english,latin_lower,EN,US_QWERTY,0,1,KeyD,KeyD,home,2,left,left,D,d,D,ก,ฏ,0,0,1,0,
+EN_KeyD_shift,D,U+0044,LATIN CAPITAL LETTER D,english,latin_upper,EN,US_QWERTY,1,1,KeyD,KeyD,home,2,left,left,d,d,D,ก,ฏ,0,0,1,0,
+EN_KeyF_base,f,U+0066,LATIN SMALL LETTER F,english,latin_lower,EN,US_QWERTY,0,1,KeyF,KeyF,home,3,left,left,F,f,F,ด,โ,0,0,1,0,
+EN_KeyF_shift,F,U+0046,LATIN CAPITAL LETTER F,english,latin_upper,EN,US_QWERTY,1,1,KeyF,KeyF,home,3,left,left,f,f,F,ด,โ,0,0,1,0,
+EN_KeyG_base,g,U+0067,LATIN SMALL LETTER G,english,latin_lower,EN,US_QWERTY,0,1,KeyG,KeyG,home,4,left,left,G,g,G,เ,ฌ,0,0,1,0,
+EN_KeyG_shift,G,U+0047,LATIN CAPITAL LETTER G,english,latin_upper,EN,US_QWERTY,1,1,KeyG,KeyG,home,4,left,left,g,g,G,เ,ฌ,0,0,1,0,
+EN_KeyH_base,h,U+0068,LATIN SMALL LETTER H,english,latin_lower,EN,US_QWERTY,0,1,KeyH,KeyH,home,5,center,right,H,h,H,้,็,0,0,1,0,
+EN_KeyH_shift,H,U+0048,LATIN CAPITAL LETTER H,english,latin_upper,EN,US_QWERTY,1,1,KeyH,KeyH,home,5,center,right,h,h,H,้,็,0,0,1,0,
+EN_KeyJ_base,j,U+006A,LATIN SMALL LETTER J,english,latin_lower,EN,US_QWERTY,0,1,KeyJ,KeyJ,home,6,right,right,J,j,J,่,๋,0,0,1,0,
+EN_KeyJ_shift,J,U+004A,LATIN CAPITAL LETTER J,english,latin_upper,EN,US_QWERTY,1,1,KeyJ,KeyJ,home,6,right,right,j,j,J,่,๋,0,0,1,0,
+EN_KeyK_base,k,U+006B,LATIN SMALL LETTER K,english,latin_lower,EN,US_QWERTY,0,1,KeyK,KeyK,home,7,right,right,K,k,K,า,ษ,0,0,1,0,
+EN_KeyK_shift,K,U+004B,LATIN CAPITAL LETTER K,english,latin_upper,EN,US_QWERTY,1,1,KeyK,KeyK,home,7,right,right,k,k,K,า,ษ,0,0,1,0,
+EN_KeyL_base,l,U+006C,LATIN SMALL LETTER L,english,latin_lower,EN,US_QWERTY,0,1,KeyL,KeyL,home,8,right,right,L,l,L,ส,ศ,0,0,1,0,
+EN_KeyL_shift,L,U+004C,LATIN CAPITAL LETTER L,english,latin_upper,EN,US_QWERTY,1,1,KeyL,KeyL,home,8,right,right,l,l,L,ส,ศ,0,0,1,0,
+EN_Semicolon_base,;,U+003B,SEMICOLON,english,english_punctuation,EN,US_QWERTY,0,1,Semicolon,Semicolon,home,9,right,right,:,;,:,ว,ซ,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Semicolon_shift,:,U+003A,COLON,english,english_symbol,EN,US_QWERTY,1,1,Semicolon,Semicolon,home,9,right,right,;,;,:,ว,ซ,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Quote_base,',U+0027,APOSTROPHE,english,english_punctuation,EN,US_QWERTY,0,1,Quote,Quote,home,10,right,right,"""",',"""",ง,.,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Quote_shift,"""",U+0022,QUOTATION MARK,english,english_symbol,EN,US_QWERTY,1,1,Quote,Quote,home,10,right,right,',',"""",ง,.,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_KeyZ_base,z,U+007A,LATIN SMALL LETTER Z,english,latin_lower,EN,US_QWERTY,0,1,KeyZ,KeyZ,bottom,0,left,left,Z,z,Z,ผ,(,0,0,1,0,
+EN_KeyZ_shift,Z,U+005A,LATIN CAPITAL LETTER Z,english,latin_upper,EN,US_QWERTY,1,1,KeyZ,KeyZ,bottom,0,left,left,z,z,Z,ผ,(,0,0,1,0,
+EN_KeyX_base,x,U+0078,LATIN SMALL LETTER X,english,latin_lower,EN,US_QWERTY,0,1,KeyX,KeyX,bottom,1,left,left,X,x,X,ป,),0,0,1,0,
+EN_KeyX_shift,X,U+0058,LATIN CAPITAL LETTER X,english,latin_upper,EN,US_QWERTY,1,1,KeyX,KeyX,bottom,1,left,left,x,x,X,ป,),0,0,1,0,
+EN_KeyC_base,c,U+0063,LATIN SMALL LETTER C,english,latin_lower,EN,US_QWERTY,0,1,KeyC,KeyC,bottom,2,left,left,C,c,C,แ,ฉ,0,0,1,0,
+EN_KeyC_shift,C,U+0043,LATIN CAPITAL LETTER C,english,latin_upper,EN,US_QWERTY,1,1,KeyC,KeyC,bottom,2,left,left,c,c,C,แ,ฉ,0,0,1,0,
+EN_KeyV_base,v,U+0076,LATIN SMALL LETTER V,english,latin_lower,EN,US_QWERTY,0,1,KeyV,KeyV,bottom,3,left,left,V,v,V,อ,ฮ,0,0,1,0,
+EN_KeyV_shift,V,U+0056,LATIN CAPITAL LETTER V,english,latin_upper,EN,US_QWERTY,1,1,KeyV,KeyV,bottom,3,left,left,v,v,V,อ,ฮ,0,0,1,0,
+EN_KeyB_base,b,U+0062,LATIN SMALL LETTER B,english,latin_lower,EN,US_QWERTY,0,1,KeyB,KeyB,bottom,4,left,left,B,b,B,ิ,ฺ,0,0,1,0,
+EN_KeyB_shift,B,U+0042,LATIN CAPITAL LETTER B,english,latin_upper,EN,US_QWERTY,1,1,KeyB,KeyB,bottom,4,left,left,b,b,B,ิ,ฺ,0,0,1,0,
+EN_KeyN_base,n,U+006E,LATIN SMALL LETTER N,english,latin_lower,EN,US_QWERTY,0,1,KeyN,KeyN,bottom,5,center,right,N,n,N,ท,์,0,0,1,0,
+EN_KeyN_shift,N,U+004E,LATIN CAPITAL LETTER N,english,latin_upper,EN,US_QWERTY,1,1,KeyN,KeyN,bottom,5,center,right,n,n,N,ท,์,0,0,1,0,
+EN_KeyM_base,m,U+006D,LATIN SMALL LETTER M,english,latin_lower,EN,US_QWERTY,0,1,KeyM,KeyM,bottom,6,right,right,M,m,M,ม,?,0,0,1,0,
+EN_KeyM_shift,M,U+004D,LATIN CAPITAL LETTER M,english,latin_upper,EN,US_QWERTY,1,1,KeyM,KeyM,bottom,6,right,right,m,m,M,ม,?,0,0,1,0,
+EN_Comma_base,",",U+002C,COMMA,english,english_punctuation,EN,US_QWERTY,0,1,Comma,Comma,bottom,7,right,right,<,",",<,ม,ฒ,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Comma_shift,<,U+003C,LESS-THAN SIGN,english,english_symbol,EN,US_QWERTY,1,1,Comma,Comma,bottom,7,right,right,",",",",<,ม,ฒ,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Period_base,.,U+002E,FULL STOP,english,english_punctuation,EN,US_QWERTY,0,1,Period,Period,bottom,8,right,right,>,.,>,ใ,ฬ,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Period_shift,>,U+003E,GREATER-THAN SIGN,english,english_symbol,EN,US_QWERTY,1,1,Period,Period,bottom,8,right,right,.,.,>,ใ,ฬ,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Slash_base,/,U+002F,SOLIDUS,english,english_punctuation,EN,US_QWERTY,0,1,Slash,Slash,bottom,9,right,right,?,/,?,ฝ,ฦ,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.
+EN_Slash_shift,?,U+003F,QUESTION MARK,english,english_symbol,EN,US_QWERTY,1,1,Slash,Slash,bottom,9,right,right,/,/,?,ฝ,ฦ,0,0,1,1,English punctuation/symbol. Project rule treats punctuation and symbols as EN for prompt-demand and layout-switch features.

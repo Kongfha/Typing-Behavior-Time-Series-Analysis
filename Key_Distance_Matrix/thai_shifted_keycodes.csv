@@ -1,0 +1,97 @@
+Key,KeyCode
+Backspace,8
+Tab,9
+Enter,13
+Shift,16
+Control,17
+Alt,18
+Pause/Break,19
+Caps Lock,20
+Escape,27
+Space,32
+Page Up,33
+Page Down,34
+End,35
+Home,36
+Left Arrow,37
+Up Arrow,38
+Right Arrow,39
+Down Arrow,40
+Insert,45
+Delete,46
+๗,48
++,49
+๑,50
+๒,51
+๓,52
+๔,53
+ู,54
+฿,55
+๕,56
+๖,57
+ฤ,65
+ฺ,66
+ฉ,67
+ฏ,68
+ฎ,69
+โ,70
+ฌ,71
+็,72
+ณ,73
+๋,74
+ษ,75
+ศ,76
+?,77
+์,78
+ฯ,79
+ญ,80
+๐,81
+ฑ,82
+ฆ,83
+ธ,84
+๊,85
+ฮ,86
+"""",87
+ํ,89
+Left Window Key,91
+Right Window Key,92
+Select Key,93
+Numpad 0,96
+Numpad 1,97
+Numpad 2,98
+Numpad 3,99
+Numpad 4,100
+Numpad 5,101
+Numpad 6,102
+Numpad 7,103
+Numpad 8,104
+Numpad 9,105
+Multiply,106
+Add,107
+Subtract,109
+Decimal Point,110
+Divide,111
+F1,112
+F2,113
+F3,114
+F4,115
+F5,116
+F6,117
+F7,118
+F8,119
+F9,120
+F10,121
+F11,122
+F12,123
+Num Lock,144
+Scroll Lock,145
+ซ,186
+๙,187
+ฒ,188
+๘,189
+ฬ,190
+ฦ,191
+%,192
+ฐ,219
+ฅ,220
+",",221
