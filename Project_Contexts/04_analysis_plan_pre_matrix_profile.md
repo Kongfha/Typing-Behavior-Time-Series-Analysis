@@ -1,9 +1,9 @@
 # Thai Typing Time-Series Mining Project
-## Detailed Analysis Plan for Descriptive Statistics, Euclidean Baselines, DTW, and Hierarchical Clustering
+## Detailed Analysis Plan for Descriptive Statistics, Euclidean Baselines, DTW, Hierarchical Clustering, and Matrix Profile
 
 ## 1. Purpose of this document
 
-This document specifies the **next analysis notebook** after the transformation notebook.
+This document specifies the **main analysis notebook** (`02_analysis_descriptive_euclidean_dtw_clustering.ipynb`) after the transformation notebook.
 
 The transformation stage is already complete. The project now has:
 - event-level enriched sequential data
@@ -13,19 +13,24 @@ The transformation stage is already complete. The project now has:
 - quality-control tables
 - sequence-ready tables for downstream time-series mining
 
-This analysis plan covers the following stages only:
+This analysis plan covers **all five analysis stages** in a single notebook:
 
 1. **Descriptive and sanity analysis**
 2. **Euclidean baseline analysis**
 3. **DTW-based similarity analysis**
 4. **Hierarchical clustering**
+5. **Matrix Profile on long 1D sequences**
 
 This document **does not** include:
-- Matrix Profile analysis
-- lower-bound acceleration experiments
+- lower-bound acceleration experiments (LB_Keogh etc.)
 - SAX or symbolic analysis
 
-Matrix Profile will be handled in a **separate notebook** because it is conceptually cleaner and is better treated as its own focused subsequence-mining stage.
+> **Note on Stage 5.** Matrix Profile was originally planned for a separate notebook.
+> It has been integrated directly into this notebook because the long-prompt data
+> (`P12`, `P13`, `P14`) is already loaded, filtered, and aggregated by Stage 1, and
+> running MP immediately after clustering gives the most economical bridge between
+> user-level and prompt-level signals. All Stage 5 outputs land in
+> `outputs/02_analysis_descriptive_euclidean_dtw_clustering/stage5_matrix_profile/`.
 
 ---
 
@@ -82,14 +87,23 @@ Goal:
 - obtain interpretable behavioral families
 - use Euclidean or DTW distance matrices depending on the object type
 
+### Stage 5. Matrix Profile on long 1D sequences
+Goal:
+- discover recurring local patterns (motifs) and anomalous subsequences (discords)
+  within the long-prompt friction waveforms, wrong-suffix-depth sequences, and
+  aggregated per-position difficulty curves
+- use results to answer *where* users share difficulty (RQ3) and *how* recurring
+  recovery shapes appear within a single user's trial (RQ4)
+- restrict MP to P12/P13/P14 only (127–145 characters, 148–317 events) where
+  sequences are long enough to make subsequence mining meaningful
+
 ### 3.2 Explicitly excluded from this notebook
 
 Do **not** implement here:
-- Stage 5 Matrix Profile
 - lower-bound pruning experiments such as LB_Keogh
 - SAX or symbolic analysis
 
-Those should remain outside this notebook.
+Those remain outside this notebook.
 
 ---
 
@@ -158,11 +172,15 @@ For the same prompt, do multiple users struggle at the same prompt region?
 - optional DTW comparison within prompt when difficulty signatures are temporally shifted
 
 ### Important note
-The strongest answer in this notebook is likely to come from:
-- prompt-position heatmaps
-- aggregated per-position difficulty curves
+The strongest answer in this notebook comes from three converging signals:
+- prompt-position heatmaps (same-prompt Euclidean distances, Stage 2)
+- aggregated per-position difficulty curves (local-difficulty peaks, Stage 1)
+- **Matrix Profile discords on the aggregated curves** (Stage 5) — the most
+  economical summary of *which exact character spans* drive shared difficulty
 
-Matrix Profile on the aggregated curves will be handled later in the separate notebook.
+All three signals are produced in this notebook. Stage 5 discords on P14 converge
+on the Thai numeral `๖` and the named entities `ชาคริษฐ์` / `เครือพันธ์`; Stage 5
+discords on P13 converge on formal connective phrases (`เพื่อเป็นประโยชน์`, `เนื้อหา`).
 
 ---
 
@@ -223,8 +241,12 @@ Use cases in this notebook:
 - descriptive plots
 - Euclidean baseline on normalized waveforms
 - optional DTW on scalar waveforms for prompt-level comparison
+- **Stage 5A**: per-trial Matrix Profile on `friction` for P12/P13/P14
+  (window m=16) to find recurring friction patterns and anomalous friction spikes
 
-Do **not** use it for Matrix Profile in this notebook.
+For Stage 5A, compute MP separately for each trial; aggregate discord
+positions across users using normalized event position (0–1 scale) to
+identify *where in the trial* friction anomalies concentrate.
 
 ---
 
@@ -239,10 +261,17 @@ Recommended per-position features:
 - `wrong_first`
 
 Use cases:
-- shared difficulty heatmaps
-- within-prompt user comparison
-- regional difficulty curves
-- Euclidean baseline or DTW within the same prompt if needed
+- shared difficulty heatmaps (Stage 1)
+- within-prompt user comparison (Stage 2, Euclidean)
+- regional difficulty curves (Stage 1)
+- Euclidean baseline or DTW within the same prompt (Stage 2/3)
+- **Stage 5C**: MP on the *aggregated* per-position `median_time_to_stability_ms`
+  curve (log-transformed, window m=8) for P12/P13/P14 — the clearest source of
+  interpretable discord results in the project
+
+For Stage 5C, first aggregate across users to get one curve per prompt (median
+stability at each position), then run `stumpy.stump`. The per-position alignment
+is exact (all users share the same prompt), so no warping is needed before MP.
 
 ---
 
@@ -649,20 +678,92 @@ This is essential. Clustering alone is not enough. The report must interpret wha
 
 ---
 
-## 11. Stage 5 reserved for another notebook
+## 11. Stage 5: Matrix Profile on Long 1D Sequences
 
-Matrix Profile analysis should be implemented separately.
+Stage 5 is implemented inside this notebook. Use `stumpy.stump` only on sequences
+long enough to make subsequence mining meaningful — in practice, the long prompts
+P12/P13/P14 (127–145 characters, 148–317 events per trial).
 
-That later notebook should focus on:
-- long-prompt friction waveforms
-- long-prompt wrong-suffix sequences
-- aggregated prompt-position difficulty curves
-- motif and discord discovery
-- comparison of discord windows with manual difficult-span annotations
+### 11.1 Three MP targets
 
-This notebook should only prepare the stage by:
-- identifying which prompts and regions look strongest
-- saving clean inputs for later use
+**5A — per-trial friction waveform** (TS Object B, window m=16)
+- Run `stump` on each user's `friction` series for a given long prompt.
+- Extract top-k motifs (lowest MP distance) and top-k discords (highest MP distance).
+- Save per-trial tables; plot raw series + MP profile for three exemplar users
+  (fastest, median, slowest by trial duration).
+- Aggregate discord event-positions across users using normalized position (0–1)
+  to identify hotspots shared across the cohort.
+
+**5B — per-trial `error_suffix_len_after` waveform** (window m=12)
+- Run `stump` on each user's `error_suffix_len_after` series.
+- Skip trials where `max(error_suffix_len_after) == 0` (no corrections at all).
+- Motifs = recurring overshoot-then-repair patterns; discords = unusually deep
+  or unusually short wrong-suffix episodes.
+- Plot exemplar users chosen by maximum suffix depth (deepest, median, shallowest).
+
+**5C — aggregated prompt-position difficulty curve** (TS Object C aggregated, window m=8)
+- For each long prompt, group by `prompt_position_1based` and compute
+  `median_time_to_stability_ms`, `mean_revisions`, `mean_wrong_first`.
+- Log-transform the median stability curve before running `stump`.
+- One MP per prompt (not per user) — this is the *shared* difficulty curve.
+- Top discords correspond directly to interpretable character spans: index back
+  into the `char_j` column to label each discord with its Thai text.
+
+**5D — discord position histogram**
+- For friction (5A), aggregate all per-user discord positions by normalized
+  event position and plot a histogram per long prompt to show *where in the trial*
+  friction anomalies concentrate.
+
+### 11.2 Window-size rationale
+
+| target | window | reasoning |
+|--------|--------|-----------|
+| friction (5A) | m=16 | ~16 events ≈ one syllable-level hesitation+repair cycle |
+| error_suffix (5B) | m=12 | ~12 events captures onset+peak+recovery of one overshoot |
+| agg. curve (5C) | m=8 | ~8 positions ≈ one Thai word boundary segment |
+
+### 11.3 Motif / discord extraction
+
+Use an exclusion zone equal to the window size around any already-selected index.
+Extract `top_k=3` motifs and `top_k=3` discords per series.
+
+```python
+def extract_motifs_discords(mp_values, k, exclusion_radius):
+    # copy mp; iteratively pick argmin/argmax and blank exclusion zone
+    ...
+```
+
+### 11.4 Participant anonymization
+
+Before Stage 5, map all participant nicknames to `U01..U26` ordered by mean
+trial duration (U01 = fastest). Persist the map to:
+- `tables/participant_nickname_to_anon_id_map.csv`
+- `stage5_matrix_profile/tables/participant_nickname_to_anon_id_map.csv`
+
+All Stage 5 figure filenames, plot labels, and summary tables use `U##` IDs.
+
+### 11.5 Expected outputs
+
+- `stage5_matrix_profile/figures/mp_friction_{P12,P13,P14}_{anon_id}.png` — 9 figs (3 prompts × 3 exemplars)
+- `stage5_matrix_profile/figures/mp_error_suffix_{P12,P13,P14}_{anon_id}.png` — up to 9 figs
+- `stage5_matrix_profile/figures/mp_aggregated_curve_{P12,P13,P14}.png` — 3 figs
+- `stage5_matrix_profile/figures/mp_friction_discord_hist_{P12,P13,P14}.png` — 3 figs
+- `stage5_matrix_profile/tables/stage5_friction_mp_motifs_discords.csv`
+- `stage5_matrix_profile/tables/stage5_error_suffix_mp_motifs_discords.csv`
+- `stage5_matrix_profile/tables/stage5_aggregated_curve_mp_motifs_discords.csv`
+- `stage5_matrix_profile/tables/stage5_aggregated_curve_{P12,P13,P14}.csv`
+
+### 11.6 Key results observed
+
+The Stage 5 discords converge tightly with Stage 1 local-difficulty peaks and
+Stage 2 same-prompt Euclidean distances, validating the earlier analysis:
+
+| prompt | top discord span | MP distance | dominant cause |
+|--------|-----------------|-------------|----------------|
+| P14 | `าปีที่ ๖` (pos 94–101) | 0.730 | Thai numeral |
+| P14 | `ครือพันธ` (pos 134–141) | 0.568 | named entity |
+| P13 | `นเพื่อเป` (pos 103–110) | 0.604 | formal connective |
+| P12 | distributed (no single peak) | ≤0.39 | expository prose |
 
 ---
 
@@ -744,94 +845,145 @@ Suggested filenames:
 
 ---
 
-## 14. Suggested notebook output structure
-
-Create a clean output directory such as:
+## 14. Notebook output structure
 
 ```text
 outputs/
-  02_analysis_descriptive_dtw_clustering/
+  02_analysis_descriptive_euclidean_dtw_clustering/
     tables/
+      prompt_summary.csv
+      participant_summary.csv
+      participant_nickname_to_anon_id_map.csv       ← anonymization map
+      all_prompt_position_curve_summaries.csv
+      keyboard_demand_summary.csv
+      same_prompt_euclidean_summary.csv
+      same_prompt_dtw_summary.csv
+      ...
     figures/
+      prompt_mean_duration_ms.png
+      participant_prompt_duration_heatmap.png
+      keyboard_demand_*.png
+      prompt_position_heatmaps_P*.png
+      dtw_same_prompt_event_heatmap_P*.png
+      euclidean_prompt_position_heatmap_P*.png
+      error_episode_dendrogram.png
+      participant_profile_euclidean_dendrogram.png
+      ...
     distance_matrices/
+      euclidean_*.csv
+      dtw_*.csv
     cluster_outputs/
+      *_cluster_membership.csv
+      *_cluster_summary.csv
     logs/
+    anonymized_figures/                             ← U## labelled summary figs
+      anon_participant_mean_duration.png
+      anon_participant_prompt_duration_heatmap.png
+      character_class_difficulty.png
+      keyboard_demand_compare.png
+      long_prompt_aggregated_difficulty_curves.png
+      prompt_level_summary.png
+      recovery_style_stacked.png
+    stage5_matrix_profile/                          ← Stage 5 outputs
+      figures/
+        mp_friction_P{12,13,14}_{U##}.png
+        mp_error_suffix_P{12,13,14}_{U##}.png
+        mp_aggregated_curve_P{12,13,14}.png
+        mp_friction_discord_hist_P{12,13,14}.png
+      tables/
+        participant_nickname_to_anon_id_map.csv
+        stage5_friction_mp_motifs_discords.csv
+        stage5_error_suffix_mp_motifs_discords.csv
+        stage5_aggregated_curve_mp_motifs_discords.csv
+        stage5_aggregated_curve_P{12,13,14}.csv
+      stage5_summary.json
 ```
-
-### Suggested saved tables
-- prompt summary table
-- participant summary table
-- same-prompt aggregated position curves
-- Euclidean distance matrices
-- DTW distance matrices
-- cluster assignment tables
-- cluster summary tables
-
-### Suggested saved objects
-- serialized dictionaries or arrays for DTW-ready objects if helpful
 
 ---
 
-## 15. Suggested notebook architecture
+## 15. Notebook architecture
 
-The notebook should have these sections:
+The notebook (`02_analysis_descriptive_euclidean_dtw_clustering.ipynb`) has 46 cells organized as:
 
-1. title and purpose
+1. title and purpose (markdown)
 2. imports and configuration
-3. Thai font setup and verification
-4. load transformed inputs
-5. QC-based filtering
-6. descriptive prompt-level analysis
-7. descriptive participant-level analysis
-8. prompt-position heatmaps and regional curves
-9. keyboard-demand summaries
-10. recovery-episode summaries
-11. Euclidean baseline analyses
-12. DTW sequence construction
-13. DTW analyses by research question
-14. hierarchical clustering analyses
-15. small transparent modeling block for RQ2
-16. export tables, figures, and distance matrices
-17. conclusions and handoff to Matrix Profile notebook
+3. helper functions (save, load, plot utilities)
+4. Thai font setup and verification
+5. load transformed inputs
+6. QC-based filtering
+7. **Stage 1** — descriptive prompt-level analysis
+8. **Stage 1** — descriptive participant-level analysis
+9. **Stage 1** — prompt-position heatmaps and regional curves
+10. **Stage 1** — keyboard-demand summaries
+11. **Stage 1** — recovery-episode summaries
+12. **Stage 2** — Euclidean baseline analyses (participant profiles + same-prompt curves + friction)
+13. **Stage 3** — DTW sequence construction
+14. **Stage 3** — DTW analyses (same-prompt, same-participant cross-prompt, error-episode windows, friction)
+15. **Stage 4** — hierarchical clustering (participants, trials, episodes, prompt-position curves)
+16. **RQ2** — transparent OLS modeling block
+17. **Stage 5** — participant anonymization + MP helpers + stumpy import
+18. **Stage 5A** — per-trial friction waveform MP (P12/P13/P14)
+19. **Stage 5B** — per-trial error_suffix_len_after MP (P12/P13/P14)
+20. **Stage 5C** — aggregated prompt-position difficulty curve MP (P12/P13/P14)
+21. **Stage 5D** — discord position histograms
+22. Stage 5 takeaways (markdown)
+23. export manifest and run summary
+24. conclusions and handoff
 
 ---
 
 ## 16. Acceptance criteria for the notebook
 
-The notebook should be considered complete only if it:
+The notebook is complete only if it:
 
-- runs top-to-bottom after configuration
-- uses QC filtering explicitly
-- generates descriptive summaries for prompts and participants
-- produces prompt-position heatmaps
-- produces participant keyboard-demand profiles or heatmaps
-- computes Euclidean baseline distance matrices
-- computes DTW distance matrices for at least:
-  - same-prompt user comparison
-  - error-episode comparison
-- performs hierarchical clustering on:
-  - participant profile vectors
-  - error-episode DTW distances
-- saves all major figures to disk
-- successfully renders Thai text in the saved plots
-- does **not** include Matrix Profile, lower bounds, or SAX
+**Stages 1–4 (existing)**
+- [ ] runs top-to-bottom after configuration
+- [ ] uses QC filtering explicitly (main trials, `all_core_qc_ok`, `qc_exact_match_ok`)
+- [ ] generates descriptive summaries for prompts and participants
+- [ ] produces prompt-position heatmaps for all 14 prompts
+- [ ] produces participant keyboard-demand profiles or heatmaps
+- [ ] computes Euclidean baseline distance matrices (participant profiles + same-prompt curves)
+- [ ] computes DTW distance matrices for same-prompt user comparison and error-episode comparison
+- [ ] performs hierarchical clustering on participant profile vectors and error-episode DTW distances
+- [ ] saves all major figures to disk and renders Thai text correctly
+
+**Stage 5 (Matrix Profile)**
+- [ ] anonymizes all participants to `U01..U26` and saves the map CSV
+- [ ] runs friction waveform MP (stumpy.stump, m=16) for each trial on P12/P13/P14
+- [ ] runs error_suffix_len_after MP (m=12) for each trial on P12/P13/P14
+- [ ] runs aggregated-curve MP (m=8) for P12/P13/P14 and saves motif/discord tables
+- [ ] plots discord position histograms (normalized event position across users)
+- [ ] all Stage 5 figures display inline (via `display_and_save_figure`) and save to disk
+- [ ] does **not** implement lower bounds (LB_Keogh) or SAX
 
 ---
 
 ## 17. Final implementation philosophy
 
-This analysis notebook should not be treated as a random collection of experiments.
+This analysis notebook is the **single main analysis notebook** for the project.
+It is not a random collection of experiments.
 
-It should be the **main project analysis notebook before Matrix Profile**, with a clear structure:
+The progression is deliberate:
 
-- first establish descriptive validity
-- then establish simple Euclidean baselines
-- then use DTW where alignment flexibility is actually needed
-- then use hierarchical clustering to summarize behavioral families
-- finally prepare the cleanest outputs for the separate Matrix Profile notebook
+1. **Descriptive validity first** — verify that the transformed features behave sensibly
+   before running any similarity or mining algorithm.
+2. **Euclidean baselines next** — establish simple lockstep reference results; identify
+   where DTW meaningfully improves over Euclidean.
+3. **DTW where alignment flexibility is needed** — event-level recovery sequences,
+   cross-user same-prompt comparison, error-episode windows.
+4. **Hierarchical clustering to summarize** — participant fluency groups, recovery-style
+   families; always interpret clusters, never just show dendrograms.
+5. **Matrix Profile last, on the longest sequences only** — motif and discord discovery
+   is the right tool for P12/P13/P14 friction and difficulty curves; applying it to
+   short or medium prompts would give unreliable results with too few potential matches.
 
 That design is:
-- aligned with the transformed data you already have
-- aligned with the project research questions
-- aligned with the course emphasis on thoughtful use of similarity, clustering, and interpretation
-- cleaner and more defendable than mixing every method into one giant notebook
+- **method-appropriate**: each stage uses the tool that fits the data and question
+- **interpretable at each step**: every distance matrix, cluster, and MP discord gets
+  a narrative explanation, not just a figure
+- **progressive**: each stage builds on the previous one rather than branching independently
+- **honest about scope**: lower-bound pruning and SAX are not implemented because they do
+  not add interpretability for a 26-participant study at this scale
+
+The companion document `Analysis_and_Discussion.md` provides the full narrative
+answering RQ1–RQ4, with anonymized (`U##`) plots and tables.
