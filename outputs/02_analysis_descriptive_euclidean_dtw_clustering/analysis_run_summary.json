@@ -1,9 +1,9 @@
 {
-  "n_manifest_items": 204,
-  "n_tables": 111,
-  "n_figures": 87,
+  "n_manifest_items": 236,
+  "n_tables": 119,
+  "n_figures": 110,
   "n_text_logs": 4,
-  "n_json_logs": 2,
+  "n_json_logs": 3,
   "kept_main_trials": 364,
   "participants": 26,
   "prompts": 14,

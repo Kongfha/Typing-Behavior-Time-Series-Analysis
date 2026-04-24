@@ -290,7 +290,10 @@ Aggregating per-user friction-MP discords by normalized event position shows whe
 | P13 | **0.4–0.5 (15/78)**, 0.7–0.8 (13/78) | middle-then-tail (formal connectives pile up) |
 | P14 | 0.2–0.3 (11/78), 0.4–0.5 (10/78), 0.7–0.8 (10/78) | **three hotspots** matching the named entity, the Thai numeral, and the second named entity |
 
-Histograms: [`mp_friction_discord_hist_P12.png`](outputs/02_analysis_descriptive_euclidean_dtw_clustering/stage5_matrix_profile/figures/mp_friction_discord_hist_P12.png), [P13](outputs/02_analysis_descriptive_euclidean_dtw_clustering/stage5_matrix_profile/figures/mp_friction_discord_hist_P13.png), [P14](outputs/02_analysis_descriptive_euclidean_dtw_clustering/stage5_matrix_profile/figures/mp_friction_discord_hist_P14.png).
+Histograms: 
+![`mp_friction_discord_hist_P12.png`](outputs/02_analysis_descriptive_euclidean_dtw_clustering/stage5_matrix_profile/figures/mp_friction_discord_hist_P12.png)
+![P13](outputs/02_analysis_descriptive_euclidean_dtw_clustering/stage5_matrix_profile/figures/mp_friction_discord_hist_P13.png)
+![P14](outputs/02_analysis_descriptive_euclidean_dtw_clustering/stage5_matrix_profile/figures/mp_friction_discord_hist_P14.png).
 
 ### 5.5 RQ3 verdict
 
@@ -343,7 +346,9 @@ The stacked bar chart shows that **style persists across prompts**. U04 (fast) a
 
 ### 6.2 DTW clustering of recovery-episode windows
 
-*Sources: [`cluster_outputs/error_episode_cluster_summary.csv`](outputs/02_analysis_descriptive_euclidean_dtw_clustering/cluster_outputs/error_episode_cluster_summary.csv), [`figures/error_episode_dendrogram.png`](outputs/02_analysis_descriptive_euclidean_dtw_clustering/figures/error_episode_dendrogram.png), [`figures/error_episode_heatmap_reordered.png`](outputs/02_analysis_descriptive_euclidean_dtw_clustering/figures/error_episode_heatmap_reordered.png).*
+*Sources: [`cluster_outputs/error_episode_cluster_summary.csv`](outputs/02_analysis_descriptive_euclidean_dtw_clustering/cluster_outputs/error_episode_cluster_summary.csv)
+![`figures/error_episode_dendrogram.png`](outputs/02_analysis_descriptive_euclidean_dtw_clustering/figures/error_episode_dendrogram.png)
+![`figures/error_episode_heatmap_reordered.png`](outputs/02_analysis_descriptive_euclidean_dtw_clustering/figures/error_episode_heatmap_reordered.png).*
 
 Average-linkage hierarchical clustering over DTW distances between 120 rich error-episode windows (3 events before / episode / 3 events after) produces 4 clusters that broadly recover the heuristic styles:
 
@@ -358,9 +363,12 @@ Average-linkage hierarchical clustering over DTW distances between 120 rich erro
 
 The MP on per-trial `error_suffix_len_after` waveforms is the clearest per-user visualisation of a recovery style. Examples:
 
-- **U09 on P14** ([fig](outputs/02_analysis_descriptive_euclidean_dtw_clustering/stage5_matrix_profile/figures/mp_error_suffix_P14_U09.png)) — several deep-overshoot motifs (suffix depth 4–5) with regular recovery; the MP shows **low distance at motifs** → the user *repeats* the same overshoot pattern through the trial.
-- **U16 on P14** ([fig](outputs/02_analysis_descriptive_euclidean_dtw_clustering/stage5_matrix_profile/figures/mp_error_suffix_P14_U16.png)) — taller spikes, larger MP variance, and a clear discord around a named entity; confirms U16's "deep overshoot" tag.
-- **U26 on P14** ([fig](outputs/02_analysis_descriptive_euclidean_dtw_clustering/stage5_matrix_profile/figures/mp_error_suffix_P14_U26.png)) — many small peaks with one unique very-deep discord; U26's dominant style is deep-overshoot but with occasional catastrophic episodes.
+- **U09 on P14** — several deep-overshoot motifs (suffix depth 4–5) with regular recovery; the MP shows **low distance at motifs** → the user *repeats* the same overshoot pattern through the trial.
+![fig](outputs/02_analysis_descriptive_euclidean_dtw_clustering/stage5_matrix_profile/figures/mp_error_suffix_P14_U09.png)
+- **U16 on P14** — taller spikes, larger MP variance, and a clear discord around a named entity; confirms U16's "deep overshoot" tag.
+![fig](outputs/02_analysis_descriptive_euclidean_dtw_clustering/stage5_matrix_profile/figures/mp_error_suffix_P14_U16.png)
+- **U26 on P14** — many small peaks with one unique very-deep discord; U26's dominant style is deep-overshoot but with occasional catastrophic episodes.
+![fig](outputs/02_analysis_descriptive_euclidean_dtw_clustering/stage5_matrix_profile/figures/mp_error_suffix_P14_U26.png)
 
 ### 6.4 RQ4 verdict
 
